@@ -1,1 +1,1 @@
-### Python mini projects test
+### Python mini projects
