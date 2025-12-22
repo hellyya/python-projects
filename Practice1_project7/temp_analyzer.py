@@ -10,3 +10,6 @@ def parse_temps(raw):
         except ValueError:
             print(f"skipping invalid value: {p}")
     return temps
+
+def c_to_f(c):
+    return c * 9 / 5 + 32
