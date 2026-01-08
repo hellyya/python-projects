@@ -1,0 +1,52 @@
+contacts = []
+
+def  add_contact(name, phone, email):
+    contact = {  
+        "name" : name,
+        "phone" : phone,
+        "email" : email
+    }
+    contacts.append(contact)
+    print("new contact added.")
+
+def search_contact(name):
+    for contact in contacts:
+       if contact["name"].lower() == name.lower():
+           return contact
+    return None 
+
+def delete_contact(name):
+    for contact in contacts:
+        if contact["name"].lower() == name.lower():
+            contacts.remove(contact)
+            print("contact deleted.")
+            return
+    print("contact not found.")
+    
+
+def print_contacts():
+    if not contacts:
+        print("there are no contacts")
+        return
+    for contact in contacts:
+        print(f"name: {contact['name']}")
+        print(f"phone: {contact['phone']}")
+        print(f"email: {contact['email']}")
+
+    #update info
+
+def update_contact(name, phone=None ,email=None):
+    contact = search_contact(name)
+    if contact:
+        if phone:
+            contact["phone"]=phone
+            if email:
+                contact["email"]=email
+            print("contact updated")
+        else:
+            print("contact not found")
+
+
+add_contact("helya", "123", "helya@gmail.com")
+add_contact("bill", "3454", "bill@yahoo.ca")
+print_contacts()
